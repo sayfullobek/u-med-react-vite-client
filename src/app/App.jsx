@@ -9,7 +9,7 @@ import { APP_API } from '../configs/AppApi'
 import { AuthAbout } from '../pages/AuthAbout'
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [diseases, setDiseases] = useState([])
   // const location = useLocation().pathname
   // console.log(location);
@@ -18,16 +18,16 @@ function App() {
     try{
         let res;
         // if (location==="auth-diseases"){
-          res = await GetAll(APP_API.diseases)
-          setDiseases(res)
+          // res = await GetAll(APP_API.diseases)
+          // setDiseases(res)
         // }
         setLoading(true)
     }catch(err){}
   }
 
-  useEffect(()=>{
-    getAll()
-  }, [])
+  // useEffect(()=>{
+  //   getAll()
+  // }, [])
   return (
     <BrowserRouter>
       <Routes>
