@@ -8,7 +8,11 @@ export const Diseases = ({link, img, loading, diseases}) => {
         <div className="container" style={{position:'relative', height:'96vh'}}>
             {loading?(
                 <>
-                    <img width={"100%"} src={img} alt=""/>
+                    {diseases.style===0?(
+                        <>Yo'q</>
+                    ):(
+                        <>
+                        <img width={"100%"} src={img} alt=""/>
                     <div className="mt-3" style={{width:'100%',height:'45vh', overflow: 'auto'}}>
                         {diseases.map(item=>(
                              <div className="app mt-1">
@@ -17,6 +21,8 @@ export const Diseases = ({link, img, loading, diseases}) => {
                         ))}
                     </div>
                     <Link to={link} style={AuthBtn} className='btn'>Keyingisi...</Link>
+                        </>
+                    )}
                 </>
             ):(
                 <>loading...</>
